@@ -16,6 +16,6 @@ setuptools.setup(
     packages=['beat'],
     url = 'https://github.com/tonyskapunk/beat',
     download_url = 'https://github.com/tonyskapunk/beat/tarball/0.1.r3',
-    license = "GNU General Public License v3 (GPLv3)"
+    license = "GNU General Public License v3 (GPLv3)",
     zip_safe=False
 )
