@@ -14,6 +14,7 @@ setuptools.setup(
         ]
     },
     packages=['beat'],
+    url = 'https://github.com/tonyskapunk/beat',
     download_url = 'https://github.com/tonyskapunk/beat/tarball/0.1.1',
     zip_safe=False
 )
