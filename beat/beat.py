@@ -28,7 +28,12 @@ def main():
     parser.add_argument('-z', '--timezone', metavar='TZ', type=float,
                         help='Timezone in hours, default: local timezone',
                         default=float(timezone/3600))
+    parser.add_argument('-v', '--version', action='store_true')
     args = parser.parse_args()
+
+    if args.version:
+        print('.beat v{}'.format(pkg_resources.get_distribution("beat").version))
+        return
     if args.time:
         hours, minutes, seconds = args.time.split(":")
         print internettime(int(hours), int(minutes), int(seconds),
