@@ -3,6 +3,7 @@
 
 from time import localtime, timezone
 import argparse
+import pkg_resources
 
 def internettime(hours, minutes, seconds, tzone):
     '''Returns time(Swatch Internet Time) in beats.
