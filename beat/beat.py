@@ -33,7 +33,7 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        print('.beat v{}'.format(pkg_resources.get_distribution("beat").version))
+        print('.beat v{0}'.format(pkg_resources.get_distribution("beat").version))
         return
     if args.time:
         hours, minutes, seconds = args.time.split(":")
