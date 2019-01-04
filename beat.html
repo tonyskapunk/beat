@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 70px;
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<p id="beat"></p>
+
+<script>
+function internettime(h, m, s, centibeats=true) {
+  var itime = (( s + (m * 60) + ((h + 1) * 3600)) / 86.4) % 1000
+  var beats = ""
+  if (centibeats) {
+    beats = itime.toFixed(3)
+  } else {
+    beats = Math.floor(itime)
+  }
+  return `@${beats}`
+}
+
+function beats_now() {
+  var d = new Date()
+  var beats = internettime(d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
+  return beats
+}
+
+// Updates the displayed time every centibeat (864 miliseconds)
+var x = setInterval(function() {
+
+  // Call beats_now
+  var beats = beats_now()
+
+  // Output the result:
+  document.getElementById("beat").innerHTML = `${beats}`
+}, 864);
+
+</script>
+
+</body>
+</html>
