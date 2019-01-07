@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="beat",
-    version="0.2.0",
+    version="0.3.0",
     description=("Swatch Internet Time conversion(beats)"),
     author="Tony Garcia",
     author_email="tonysk8@gmx.net",
