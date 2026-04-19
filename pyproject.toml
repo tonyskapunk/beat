@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "beat-time"
+version = "1.0.0"
+description = "Swatch® Internet Time conversion (beats)"
+readme = "README.md"
+license = "GPL-3.0-only"
+requires-python = ">=3.10"
+authors = [
+    { name = "Tony Garcia" },
+]
+
+[project.urls]
+Homepage = "https://github.com/tonyskapunk/beat"
+
+[tool.hatch.build.targets.wheel]
+packages = ["beat_time"]
+
+[project.scripts]
+beat = "beat_time.cli:main"
