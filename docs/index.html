@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.beat - Swatch Internet Time</title>
+<style>
+body {
+  background-color: #121212;
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 15vw;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: lavender;
+}
+
+p.link {
+  text-align: center;
+  font-size: 3vw;
+  color: lightgray;
+}
+</style>
+</head>
+<body>
+
+<p id="beat"></p>
+<p class="link">Fork me on GitHub: <a href="https://github.com/tonyskapunk/beat">.beat</a></p>
+
+<script>
+function internettime(h, m, s, centibeats=true) {
+  var itime = (( s + (m * 60) + ((h + 1) * 3600)) / 86.4) % 1000;
+  if (centibeats) {
+    return `@${itime.toFixed(3)}`;
+  }
+  return `@${Math.floor(itime)}`;
+}
+
+function beats_now() {
+  var d = new Date();
+  return internettime(d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
+}
+
+document.getElementById("beat").textContent = beats_now();
+
+setInterval(function() {
+  document.getElementById("beat").textContent = beats_now();
+}, 864);
+</script>
+
+</body>
+</html>
